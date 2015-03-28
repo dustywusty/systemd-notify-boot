@@ -1,0 +1,13 @@
+#!/bin/bash
+
+TO=dusty@isperldead.net
+FROM=`whoami`@`hostname`
+SUBJECT="[boot] `hostname` @ `date`"
+
+sendmail $TO <<EOF
+From: $FROM
+Subject: $SUBJECT
+`uname -a`
+
+`ifconfig`
+EOF
