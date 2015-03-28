@@ -1,0 +1,11 @@
+[Unit]
+Description=Email network configuration on boot
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/notify_boot
+
+[Install]
+WantedBy=multi-user.target
